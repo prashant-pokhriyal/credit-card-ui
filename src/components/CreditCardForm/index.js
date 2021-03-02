@@ -10,7 +10,6 @@ export default function CreditCardForm(props) {
         let value = e.target.value;
 
         if (name === 'number') {
-            console.log({value})
             value = value.replace(/\s/g, '').match(/.{1,4}/g) || [''];
             let appendX = 4 - value[value.length - 1].length;
             while (appendX) {
@@ -30,6 +29,14 @@ export default function CreditCardForm(props) {
         }
         props.onChange(name, value);
     };
+
+    const handleFocus = (e) => {
+        props.onFocus(e);
+    };
+
+    const handleBlur = (e) => {
+        props.onBlur(e);
+    }
     // useEffect(() => {
     //     setState(state => ({ ...state, ...props }));
     // }, [props]);
@@ -76,7 +83,15 @@ export default function CreditCardForm(props) {
                         </Form.Group>
                         <Form.Group as={Col} controlId="ccHolder">
                             <Form.Label>CVV</Form.Label>
-                            <Form.Control type="text" placeholder="Enter CVV" size="lg" onChange={handleChange} name="cvv" value={state.cvv} />
+                            <Form.Control
+                                type="text"
+                                placeholder="Enter CVV"
+                                size="lg"
+                                onChange={handleChange}
+                                onFocus={handleFocus}
+                                onBlur={handleBlur}
+                                name="cvv"
+                                value={state.cvv} />
                         </Form.Group>
                     </Form.Row>
 

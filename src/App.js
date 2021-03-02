@@ -14,6 +14,7 @@ function App() {
       month: null,
       year: null,
     },
+    showFront: true,
   });
 
   const handleFormChange = (name, value) => {
@@ -31,17 +32,34 @@ function App() {
     console.log(state);
   };
 
+  const handleFocus = (e) => {
+    console.log(e);
+    setState(state => ({ ...state, showFront: false }));
+  };
+
+  const handleBlur = (e) => {
+    console.log(e);
+    setState(state => ({ ...state, showFront: true }));
+  };
+
   return (
     <Container className="app" fluid={true}>
       <Row className="justify-content-md-center">
         <CreditCard
+          showFront={state.showFront}
           number={state.number}
           name={state.name}
           expiry={state.expiry}
+          cvv={state.cvv}
           className="app-cc position-absolute"
         ></CreditCard>
         <Col sm={5}>
-          <CreditCardForm className="app-cc-form" onChange={handleFormChange}></CreditCardForm>
+          <CreditCardForm
+            className="app-cc-form"
+            onChange={handleFormChange}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+          ></CreditCardForm>
         </Col>
       </Row>
     </Container>
