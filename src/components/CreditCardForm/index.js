@@ -10,7 +10,11 @@ export default function CreditCardForm(props) {
         let value = e.target.value;
 
         if (name === 'number') {
-            value = value.replace(/\s/g, '').match(/.{1,4}/g) || [''];
+            value = value.replace(/\s/g, '');
+            if (value.length > 16) return;
+            value = value.match(/.{1,4}/g) || [''];
+            let newValue = value.join('    ');
+            setState(state => ({ ...state, [name]: newValue }));
             let appendX = 4 - value[value.length - 1].length;
             while (appendX) {
                 value[value.length - 1] += 'x';
@@ -36,7 +40,7 @@ export default function CreditCardForm(props) {
 
     const handleBlur = (e) => {
         props.onBlur(e);
-    }
+    };
     // useEffect(() => {
     //     setState(state => ({ ...state, ...props }));
     // }, [props]);
