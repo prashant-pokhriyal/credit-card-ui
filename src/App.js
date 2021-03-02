@@ -1,24 +1,50 @@
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Row, Col } from 'react-bootstrap';
+import { useState, useEffect } from 'react';
+
+import CreditCard from './components/CreditCard';
+import CreditCardForm from './components/CreditCardForm';
 import './App.css';
 
 function App() {
+  const [state, setState] = useState({
+    number: ['xxxx', 'xxxx', 'xxxx', 'xxxx'],
+    name: 'Foo Bar',
+    expiry: {
+      month: null,
+      year: null,
+    },
+  });
+
+  const handleFormChange = (name, value) => {
+    let data = {};
+    if (name === 'month' || name === 'year') {
+      data.expiry = {
+        ...state.expiry,
+        [name]: value,
+      };
+    } else {
+      data[name] = value;
+    }
+
+    setState(state => ({ ...state, ...data }));
+    console.log(state);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container className="app" fluid={true}>
+      <Row className="justify-content-md-center">
+        <CreditCard
+          number={state.number}
+          name={state.name}
+          expiry={state.expiry}
+          className="app-cc position-absolute"
+        ></CreditCard>
+        <Col sm={5}>
+          <CreditCardForm className="app-cc-form" onChange={handleFormChange}></CreditCardForm>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

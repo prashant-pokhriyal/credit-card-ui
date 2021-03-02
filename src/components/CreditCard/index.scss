@@ -1,0 +1,19 @@
+.cc-container {
+    width: 400px;
+    height: 260px;
+    background-image: url(../../assets/img/1.jpeg);
+    background-size: cover;
+    border-radius: 10px;
+    color: #fff;
+    .cc-chip {
+        width: 60px;
+    }
+    .cc-vendor-name {
+        width: 80px;
+    }
+    .cc-number {
+        font-size: 20px;
+        // font-weight: 800;
+        letter-spacing: 4px;
+    }
+}
