@@ -30,7 +30,7 @@ export default function Palette(props) {
         <Row className="app-palette">
             {
                 images.map((image, index) => (
-                    <Col sm={3} key={index} onClick={e => handleClick(index)} className="mb-2 p-1">
+                    <Col xs={3} sm={3} md={3} lg={2} key={index} onClick={e => handleClick(index)} className="mb-2 p-1">
                         <div>
                             <Image src={image} thumbnail className={selectedImage === index ? 'bg-primary' : ''}/>
                         </div>

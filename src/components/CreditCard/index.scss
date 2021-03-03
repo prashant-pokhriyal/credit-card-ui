@@ -130,8 +130,9 @@ $unit-of-speed: 30ms;
   .card-flip,
   .front,
   .back {
-    width: 410px;
-    height: 270px;
+    width: 85vw;
+    max-width: 410px;
+    min-width: 321px;
   }
 
   .flip {

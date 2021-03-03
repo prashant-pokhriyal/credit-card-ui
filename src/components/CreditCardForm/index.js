@@ -113,7 +113,7 @@ export default function CreditCardForm(props) {
                     </Form.Row>
 
                     <Form.Row>
-                        <Form.Group as={Col} controlId="formGridState">
+                        <Form.Group as={Col} xs={6} sm={4} controlId="formGridState">
                             <Form.Label>Expiration Date</Form.Label>
                             <Form.Control
                                 as="select"
@@ -130,7 +130,7 @@ export default function CreditCardForm(props) {
                             </Form.Control>
                             <Form.Control.Feedback type="invalid">{state.error?.month}</Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group as={Col} controlId="formGridState">
+                        <Form.Group as={Col} xs={6} sm={4} controlId="formGridState">
                             <Form.Label>&nbsp;</Form.Label>
                             <Form.Control
                                 as="select"
@@ -147,7 +147,7 @@ export default function CreditCardForm(props) {
                             </Form.Control>
                             <Form.Control.Feedback type="invalid">{state.error?.year}</Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group as={Col} controlId="ccHolder">
+                        <Form.Group as={Col} xs={12} sm={4} controlId="ccHolder">
                             <Form.Label>CVV</Form.Label>
                             <Form.Control
                                 type="text"

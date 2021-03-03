@@ -53,7 +53,7 @@ function App() {
   return (
     <Container className="app" fluid="true">
       <Row className="justify-content-md-center">
-        <Col sm={5}>
+        <Col xs={12} sm={8} md={7} lg={5}>
           <CreditCard
             image={state.image}
             showFront={state.showFront}
@@ -71,7 +71,7 @@ function App() {
             onSubmit={handleSubmit}
           ></CreditCardForm>
         </Col>
-        <Col sm={3} >
+        <Col xs={12} sm={3} md={4} lg={5}>
           <Palette onSelect={handleSelect}></Palette>
         </Col>
       </Row>
