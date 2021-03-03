@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/credit-card-ui/static/css/main.a5d70842.chunk.css",
-    "main.js": "/credit-card-ui/static/js/main.d63f96a0.chunk.js",
-    "main.js.map": "/credit-card-ui/static/js/main.d63f96a0.chunk.js.map",
+    "main.css": "/credit-card-ui/static/css/main.2f2b3bc2.chunk.css",
+    "main.js": "/credit-card-ui/static/js/main.8404acf0.chunk.js",
+    "main.js.map": "/credit-card-ui/static/js/main.8404acf0.chunk.js.map",
     "runtime-main.js": "/credit-card-ui/static/js/runtime-main.cbbdca65.js",
     "runtime-main.js.map": "/credit-card-ui/static/js/runtime-main.cbbdca65.js.map",
     "static/css/2.150d169a.chunk.css": "/credit-card-ui/static/css/2.150d169a.chunk.css",
@@ -62,7 +62,7 @@
     "static/js/28.759f8fe3.chunk.js.map": "/credit-card-ui/static/js/28.759f8fe3.chunk.js.map",
     "index.html": "/credit-card-ui/index.html",
     "static/css/2.150d169a.chunk.css.map": "/credit-card-ui/static/css/2.150d169a.chunk.css.map",
-    "static/css/main.a5d70842.chunk.css.map": "/credit-card-ui/static/css/main.a5d70842.chunk.css.map",
+    "static/css/main.2f2b3bc2.chunk.css.map": "/credit-card-ui/static/css/main.2f2b3bc2.chunk.css.map",
     "static/js/2.eec60d0f.chunk.js.LICENSE.txt": "/credit-card-ui/static/js/2.eec60d0f.chunk.js.LICENSE.txt",
     "static/media/1.jpeg": "/credit-card-ui/static/media/1.31552163.jpeg",
     "static/media/10.jpeg": "/credit-card-ui/static/media/10.da10c6d4.jpeg",
@@ -99,7 +99,7 @@
     "static/js/runtime-main.cbbdca65.js",
     "static/css/2.150d169a.chunk.css",
     "static/js/2.eec60d0f.chunk.js",
-    "static/css/main.a5d70842.chunk.css",
-    "static/js/main.d63f96a0.chunk.js"
+    "static/css/main.2f2b3bc2.chunk.css",
+    "static/js/main.8404acf0.chunk.js"
   ]
 }
