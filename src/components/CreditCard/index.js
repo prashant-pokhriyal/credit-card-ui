@@ -32,7 +32,7 @@ export default function CreditCard(props) {
 
 const CardFront = (state) => {
     return (
-        <Card>
+        <Card style={{ backgroundImage: `url(${state.image})` }}>
             <Card.Body className="cc-front">
                 <Row>
                     <Col>
@@ -59,17 +59,17 @@ const CardFront = (state) => {
                 </Row>
                 <Row className="mt-5 cc-last-row">
                     <Col>
-                        <span class="small">Card Holder</span>
+                        <span className="small">Card Holder</span>
                         <p className="font-weight-bold">{state.name}</p>
                     </Col>
                     <Col className="text-right">
-                        <span class="small">Expires</span>
+                        <span className="small">Expires</span>
                         <p className="font-weight-bold cc-expiry">
-                            {state.expiry?.month ? 
-                            <span key={state.expiry.month} className="slide-down">{state.expiry.month}</span>
-                            :
-                            <span className="slide-down">MM</span>
-                        }
+                            {state.expiry?.month ?
+                                <span key={state.expiry.month} className="slide-down">{state.expiry.month}</span>
+                                :
+                                <span className="slide-down">MM</span>
+                            }
                             /
                             <span key={state.expiry?.year} className="slide-down">{state.expiry?.year ?? 'YY'}</span>
                         </p>
@@ -82,7 +82,7 @@ const CardFront = (state) => {
 
 const CardBack = (state) => {
     return (
-        <Card>
+        <Card style={{ backgroundImage: `url(${state.image})` }}>
             <Card.Body className="cc-back">
                 <Row className="cc-black-band">
                 </Row>

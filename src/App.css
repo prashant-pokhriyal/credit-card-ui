@@ -1,17 +1,18 @@
 .app {
   background-color: #DDEEFC;
-  height: 100vh;
+  height: 100%;
+  padding-top: 180px;
 }
 
 .app-cc-form {
   padding-top: 200px;
-  margin-top: 180px;
   border-radius: 10px;
   box-shadow: 0px 25px 25px 10px #C8DAEC;
   padding-left: 10px;
   padding-right: 10px;
 }
 .app-cc {
-  top: 55px;
+  top: -23%;
+  left: 100px;
   z-index: 1;
 }

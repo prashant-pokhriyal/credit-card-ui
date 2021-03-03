@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Card, Row, Col, Button, Form } from 'react-bootstrap';
+import { Card, Col, Button, Form } from 'react-bootstrap';
 import './index.scss';
 
 export default function CreditCardForm(props) {

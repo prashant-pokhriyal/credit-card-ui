@@ -1,0 +1,10 @@
+.app-palette {
+    // max-height: 100vh;
+    // overflow-y: scroll;
+    // overflow-x: hidden;
+    .image-container {
+        img {
+            max-width: fill-available;
+        }
+    }
+}
