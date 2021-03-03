@@ -1,3 +1,87 @@
+$unit-of-speed: 30ms;
+
+@mixin animation($single-animation) {
+  -webkit-animation: $single-animation;
+  animation: $single-animation;
+}
+
+@mixin animation-duration($duration) {
+  -webkit-animation-duration: $duration;
+  animation-duration: $duration;
+}
+
+.digit {
+  display: inline-block;
+  height: 1em;
+  width: 0.59em;
+  overflow: hidden;
+}
+
+.digit-container {
+  line-height: 1em;
+}
+
+.slide-up {
+  @include animation(slide-up);
+  @include animation-duration(10 * $unit-of-speed);
+}
+
+.slide-down {
+  @include animation(slide-down);
+  @include animation-duration(10 * $unit-of-speed);
+}
+.cc-expiry {
+  .slide-up {
+    display: inline-block;
+    @include animation(slide-up);
+    @include animation-duration(10 * $unit-of-speed);
+  }
+  .slide-down {
+    display: inline-block;
+    @include animation(slide-down);
+    @include animation-duration(10 * $unit-of-speed);
+  }
+}
+@-webkit-keyframes slide-up {
+  from {
+    -webkit-transform: translateY(0);
+  }
+
+  to {
+    -webkit-transform: translateY(-1em);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(-1em);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes slide-down {
+  from {
+    -webkit-transform: translateY(1em);
+  }
+
+  to {
+    -webkit-transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(1em);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
 .cc-container {
   .cc-chip {
     width: 60px;
@@ -10,17 +94,22 @@
     // font-weight: 800;
     letter-spacing: 4px;
   }
+  .cc-last-row {
+    .small {
+      letter-spacing: 1px;
+    }
+  }
   .cc-cvv {
     p {
-        margin-bottom: unset;
-        padding-right: 5px;
-        &:last-child {
-            color: black;
-            height: 45px;
-            border-radius: 5px;
-            background-color: white;
-            padding: 10px;
-        }
+      margin-bottom: unset;
+      padding-right: 5px;
+      &:last-child {
+        color: black;
+        height: 45px;
+        border-radius: 5px;
+        background-color: white;
+        padding: 10px;
+      }
     }
   }
   .cc-black-band {

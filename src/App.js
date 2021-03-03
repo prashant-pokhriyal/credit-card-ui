@@ -18,12 +18,9 @@ function App() {
   });
 
   const handleFormChange = (name, value) => {
-    let data = {};
+    let data = { expiry: state.expiry };
     if (name === 'month' || name === 'year') {
-      data.expiry = {
-        ...state.expiry,
-        [name]: value,
-      };
+      data.expiry[name] = value;
     } else {
       data[name] = value;
     }

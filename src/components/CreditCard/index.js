@@ -46,19 +46,33 @@ const CardFront = (state) => {
                     {
                         state.number?.map(chunk => (
                             <Col>
-                                <p>{chunk}</p>
+                                {
+                                    chunk.split('').map(digit => (
+                                        <div className="digit">
+                                            <div className={digit === 'x' ? 'digit-container slide-up' : 'digit-container slide-down'}>{digit === 'x' ? '#' : digit}</div>
+                                        </div>
+                                    ))
+                                }
                             </Col>
                         ))
                     }
                 </Row>
-                <Row className="mt-4">
+                <Row className="mt-5 cc-last-row">
                     <Col>
-                        <span>Card Holder</span>
+                        <span class="small">Card Holder</span>
                         <p className="font-weight-bold">{state.name}</p>
                     </Col>
                     <Col className="text-right">
-                        <span>Expires</span>
-                        <p className="font-weight-bold">{state.expiry?.month || 'MM'}/{state.expiry?.year || 'YY'}</p>
+                        <span class="small">Expires</span>
+                        <p className="font-weight-bold cc-expiry">
+                            {state.expiry?.month ? 
+                            <span key={state.expiry.month} className="slide-down">{state.expiry.month}</span>
+                            :
+                            <span className="slide-down">MM</span>
+                        }
+                            /
+                            <span key={state.expiry?.year} className="slide-down">{state.expiry?.year ?? 'YY'}</span>
+                        </p>
                     </Col>
                 </Row>
             </Card.Body>
