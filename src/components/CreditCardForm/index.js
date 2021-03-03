@@ -7,18 +7,19 @@ export default function CreditCardForm(props) {
     const [validated, setValidated] = useState(false);
 
     const handleSubmit = (event) => {
+        event.preventDefault();
+        event.stopPropagation();
         const form = event.currentTarget;
+        let error = state.error || {};
         if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
             let list = form.querySelectorAll(':invalid');
-            let error = state.error || {};
             for (let item of list) {
                 error[item.name] = 'Required';
             }
-            setState({ ...state, error });
+        } else {
+            props.onSubmit(state);
         }
-
+        setState({ ...state, error });
         setValidated(true);
     };
 
@@ -118,11 +119,11 @@ export default function CreditCardForm(props) {
                                 as="select"
                                 size="lg"
                                 onChange={handleChange}
-                                // isInvalid={submitted && !state.error?.month}
+                                // isInvalid={validated && state.error?.month}
                                 required
                                 name="month"
                                 value={state.expiry.month}>
-                                <option hidden >Month</option>
+                                <option hidden value="">Month</option>
                                 {
                                     [...new Array(12)].map((number, index) => (<option>{index + 1}</option>))
                                 }
@@ -135,11 +136,11 @@ export default function CreditCardForm(props) {
                                 as="select"
                                 size="lg"
                                 onChange={handleChange}
-                                // isInvalid={submitted && !state.error?.year}
+                                // isInvalid={validated && state.error?.year}
                                 required
                                 name="year"
                                 value={state.expiry.year}>
-                                <option hidden>Year</option>
+                                <option hidden value="">Year</option>
                                 {
                                     [...new Array(15)].map((number, index) => (<option>{index + 2021}</option>))
                                 }

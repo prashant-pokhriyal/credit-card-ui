@@ -45,6 +45,11 @@ function App() {
     setState(state => ({ ...state, image }));
   };
 
+  const handleSubmit = (data) => {
+    localStorage.setItem('form', JSON.stringify(state));
+    alert('form submitted successfully');
+  };
+
   return (
     <Container className="app" fluid="true">
       <Row className="justify-content-md-center">
@@ -63,6 +68,7 @@ function App() {
             onChange={handleFormChange}
             onFocus={handleFocus}
             onBlur={handleBlur}
+            onSubmit={handleSubmit}
           ></CreditCardForm>
         </Col>
         <Col sm={3} >
